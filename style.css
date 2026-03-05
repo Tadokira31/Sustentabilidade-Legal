@@ -1,0 +1,232 @@
+/* ===== VARIÁVEIS DE COR (cores que você escolheu) ===== */
+:root {
+    --verde: #2ecc71;          /* verde */
+    --azul-esverdeado: #1abc9c; /* azul esverdeado */
+    --roxo: #9b59b6;            /* roxo */
+    --cinza-claro: #f4f4f4;
+    --texto-escuro: #2c3e50;
+    --sombra: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--texto-escuro);
+    background-color: white;
+    line-height: 1.6;
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+header {
+    background: white;
+    box-shadow: var(--sombra);
+    position: sticky;   /* fica fixo no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--roxo);
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+
+/* Primeira seção (capa) com fundo degradê */
+.capa {
+    background: linear-gradient(135deg, var(--verde), var(--azul-esverdeado));
+    color: white;
+    text-align: center;
+    box-shadow: none;
+}
+
+.capa h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitulo {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.autor {
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Títulos das seções */
+h2 {
+    font-size: 2rem;
+    color: var(--verde);
+    border-left: 8px solid var(--roxo);
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    color: var(--azul-esverdeado);
+    margin: 1.5rem 0 0.5rem;
+}
+
+/* Destaque para o conceito central */
+.destaque {
+    background-color: var(--cinza-claro);
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-left: 5px solid var(--roxo);
+    margin: 1.5rem 0;
+}
+
+/* Cards do tripé */
+.tripé {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 200px;
+    background: var(--cinza-claro);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-top: 6px solid;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--texto-escuro);
+}
+
+/* Listas (bullet points) */
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+ul li::before {
+    content: "🌱";
+    position: absolute;
+    left: 0;
+    color: var(--verde);
+    font-size: 1.2rem;
+}
+
+/* Citação */
+blockquote {
+    background: var(--cinza-claro);
+    padding: 1.5rem;
+    border-radius: 12px;
+    font-style: italic;
+    margin: 1.5rem 0;
+    border-left: 5px solid var(--azul-esverdeado);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--cinza-claro);
+    color: var(--texto-escuro);
+    margin-top: 3rem;
+}
+
+/* Botão flutuante das folhas */
+#leafButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--roxo);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(155, 89, 182, 0.4);
+    transition: transform 0.2s;
+    z-index: 1000;
+}
+
+#leafButton:hover {
+    transform: scale(1.05);
+    background-color: var(--verde);
+}
+
+/* ===== RESPONSIVIDADE (mobile) ===== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .nav-menu {
+        justify-content: center;
+    }
+
+    .section {
+        margin: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .capa h1 {
+        font-size: 1.8rem;
+    }
+
+    .tripé {
+        flex-direction: column;
+    }
+}
